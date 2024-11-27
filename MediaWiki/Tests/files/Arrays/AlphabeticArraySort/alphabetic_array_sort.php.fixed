@@ -1,5 +1,8 @@
 <?php
 
+const TESTING_CONST = 'testing_const';
+const ANOTHER_TESTING_CONST = 'another_testing_const';
+
 /**
  * Good example
  * @phpcs-require-sorted-array
@@ -10,6 +13,15 @@ $a = [
 	'c' => '3',
 	'd' => '4',
 	'e' => '5',
+];
+
+/**
+ * Good example with php consts
+ * @phpcs-require-sorted-array
+ */
+$a = [
+	$this->ANOTHER_TESTING_CONST => '1',
+	$this->TESTING_CONST => '2',
 ];
 
 /**
@@ -35,6 +47,15 @@ $a = [
 	'c' => '3',
 	'd' => '4',
 	'e' => '5',
+];
+
+/**
+ * Bad example with php consts
+ * @phpcs-require-sorted-array
+ */
+$a = [
+	$this->ANOTHER_TESTING_CONST => '1',
+	$this->TESTING_CONST => '2',
 ];
 
 /**
