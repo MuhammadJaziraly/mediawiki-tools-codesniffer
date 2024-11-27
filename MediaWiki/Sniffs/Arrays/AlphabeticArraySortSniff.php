@@ -114,7 +114,7 @@ class AlphabeticArraySortSniff implements Sniff {
 			}
 			$keyToken = $phpcsFile->findNext( Tokens::$emptyTokens, $next, $endItem + 1, true );
 
-			$arrayKey = $tokens[$keyToken]['content'];
+			$arrayKey = $phpcsFile->getTokensAsString( $keyToken, $endItem - $keyToken + 1 );
 			if ( isset( $keys[$arrayKey] ) ) {
 				$phpcsFile->addWarning(
 					'Found duplicate key "%s" on array required sorting',
